@@ -44,8 +44,9 @@ LLMはリージョンごとに有効化する必要があります。 `AWS_REGIO
 
 `.aws.env` ファイルの内容を編集します
 ```ini
-AWS_ACCESS_KEY_ID=<ここにあなたのAWSアクセスキーIDを入力>
-AWS_SECRET_ACCESS_KEY=<ここにあなたのAWSシークレットアクセスキーを入力>
+AWS_ACCESS_KEY_ID=<your-access-key-id>
+AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
+AWS_DEFAULT_REGION=<your-default-region>
 
 # Bedrockを使う設定。使わない場合は、設定しなくてOK
 CLAUDE_CODE_USE_BEDROCK=1
@@ -56,11 +57,8 @@ ANTHROPIC_SMALL_FAST_MODEL="us.anthropic.claude-3-5-haiku-20241022-v1:0"
 
 # Bedrock統合を有効化
 CLAUDE_CODE_USE_BEDROCK=1
-AWS_REGION=us-west-2
+AWS_REGION=<your-region>
 
-AWS_ACCESS_KEY_ID=your-access-key-id
-AWS_SECRET_ACCESS_KEY=your-secret-access-key
-AWS_DEFAULT_REGION=us-east-1
 ```
 
 .aws.env自体は、compose.yamlで指定して、コンテナに情報を渡します。
