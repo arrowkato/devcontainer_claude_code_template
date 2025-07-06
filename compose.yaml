@@ -1,0 +1,22 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: develop
+    container_name: news_curator_agent
+    env_file:
+      # Claude Code を Bedrock 経由で使うときに設定してください。
+      - .aws.env
+      # その他諸々の環境変数
+      - .env
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+      # devcontainer を使っているとgitの設定を求められることがあるので渡しておく
+      - ~/.gitconfig:/root/.gitconfig:ro
+    tty: true
+    stdin_open: true
+    environment:
+      - PYTHONPATH=/app

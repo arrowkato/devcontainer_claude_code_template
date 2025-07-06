@@ -1,0 +1,11 @@
+[project]
+name = "devcontainer_claude_code_template"
+version = "0.1.0"
+description = "template for devcontainer with Claude Code"
+
+authors = [{ name = "arrowkato" }]
+
+requires-python = ">=3.13"
+readme = "README.md"
+
+dependencies = ["dotenv>=0.9.9"]

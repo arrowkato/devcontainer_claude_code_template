@@ -1,0 +1,15 @@
+{
+    "mcpServers": {
+        "o3": {
+            "command": "npx",
+            "args": [
+                "o3-search-mcp"
+            ],
+            "env": {
+                "SEARCH_CONTEXT_SIZE": "medium",
+                "REASONING_EFFORT": "medium",
+                "こめんと": "ほんとは、OPENAI_API_KEYを設定する必要がありますが、環境変数で設定済みならそちらを使います。設定してないとコケます"
+            }
+        }
+    }
+}

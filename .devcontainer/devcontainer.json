@@ -1,0 +1,54 @@
+{
+    "dockerComposeFile": [
+        // このファイルから見たときの相対パス
+        "../compose.yaml"
+    ],
+    "service": "app",
+    "workspaceFolder": "/app",
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "configureZshAsDefaultShell": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        },
+        "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+            "plugins": "ssh-agent npm zsh-syntax-highlighting zsh-autosuggestions",
+            "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions https://github.com/zsh-users/zsh-syntax-highlighting",
+            "username": "root"
+        },
+        "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
+    },
+    // compose.yaml で指定された command を上書きする
+    "overrideCommand": true,
+    "customizations": {
+        "extensions": [
+            "ms-python.python"
+        ],
+        "vscode": {
+            // extensionは趣味なのでお好みでどうぞ
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "mhutchie.git-graph",
+                "donjayamanne.githistory",
+                "oderwat.indent-rainbow",
+                "mgesbert.python-path",
+                "mechatroner.rainbow-csv",
+                "ms-python.python",
+                "tamasfe.even-better-toml",
+                "njpwerner.autodocstring",
+                "littlefoxteam.vscode-python-test-adapter",
+                "shardulm94.trailing-spaces",
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "ms-python.debugpy",
+                "charliermarsh.ruff",
+                "astral-sh.ty"
+            ]
+        }
+    },
+    // Dev Container 起動時に実行するスクリプト（任意）
+    "postCreateCommand": "uv sync --dev",
+    "remoteUser": "root"
+}
