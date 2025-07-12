@@ -7,8 +7,21 @@
             ],
             "env": {
                 "SEARCH_CONTEXT_SIZE": "medium",
-                "REASONING_EFFORT": "medium",
-                "こめんと": "ほんとは、OPENAI_API_KEYを設定する必要がありますが、環境変数で設定済みならそちらを使います。設定してないとコケます"
+                "REASONING_EFFORT": "medium"
+            }
+        },
+        "github": {
+            "command": "docker",
+            "args": [
+                "run",
+                "-i",
+                "--rm",
+                "-e",
+                "GITHUB_PERSONAL_ACCESS_TOKEN",
+                "ghcr.io/github/github-mcp-server"
+            ],
+            "env": {
+                "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
             }
         }
     }
