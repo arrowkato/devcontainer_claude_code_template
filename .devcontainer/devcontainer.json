@@ -50,7 +50,15 @@
             ]
         }
     },
-    // Dev Container 起動時に実行するスクリプト（任意）
+    // Dev Container 起動時に実行するスクリプト1 (そのままだとシェルが使えないことに注意)
+    "onCreateCommand": "echo hoge",
+    // Dev Container 起動時に実行するスクリプト2 (そのままだとシェルが使えないことに注意)
+    "updateContentCommand": [
+        "sh",
+        "-c",
+        "if [ -f /app/.env ]; then set -a && . /app/.env && set +a && if [ -n \"$GITHUB_TOKEN\" ]; then echo \"$GITHUB_TOKEN\" | gh auth login --with-token || echo 'gh auth login completed with warnings'; else echo 'GITHUB_TOKEN not found in .env'; fi; else echo 'No .env file found, skipping gh auth'; fi"
+    ],
+    // Dev Container 起動時に実行するスクリプト3（任意）(そのままだとシェルが使えないことに注意)
     "postCreateCommand": "uv sync --dev",
     "remoteUser": "root"
 }
