@@ -9,6 +9,19 @@
   - ruff
   - ty
 
+## 構築方針
+### Shell
+1. Dockerfile
+2. compose.yaml
+3. .devcontainer/devcontainer.json
+
+開発するときのShellとしてzshを好んで使っています。
+ただし、設定上は、devcontainer のところでのみ記載しています。
+それ以外では、Dockerfile に記載したデフォルトのShellが使われます。
+
+### Docker
+MCPサーバーも普通のホスト上と同じ設定で動くことを目的として、Docker in Docker の環境を構築しています。
+構築の手順がそれなりに煩雑なので、https://containers.dev/features でDinDを使ったほうが良かったかもしれません。(zshは使っているので)
 
 ## 環境設定
 
@@ -77,11 +90,11 @@ cp .env.example .env
 `.env` ファイルの内容を編集します：
 
 ```ini
+# GitHub Token (gh コマンド用)
+GITHUB_PERSONAL_ACCESS_TOKEN="your-github-token-here"
+
 # OpenAI API Key
 OPENAI_API_KEY="your-openai-api-key-here"
-
-# GitHub Token (gh コマンド用)
-GITHUB_TOKEN="your-github-token-here"
 ```
 
 `.env` ファイルもcompose.yamlで指定して、コンテナに情報を渡しています。
