@@ -222,11 +222,16 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,linux,python
 
+# 基本的に.gitignoreに記載されているものは除外する
+.aws.env
 .env
 token.json
 credentials.json
 multipage.spec
-
 data/**
-
 secrets/
+multipage.spec
+# Claude Code関連
+.claude/private/
+.claude/settings.local.json
+
