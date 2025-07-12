@@ -230,3 +230,7 @@ multipage.spec
 
 data/**
 
+# Claude Code で /f コマンドを打つと、.claude/private/CLAUDE_CODE_INSTRUCTION.md の内容を実行する
+# CLAUDE_CODE_INSTRUCTION.md には秘匿したい情報を書くため無視
+.claude/private/
+
