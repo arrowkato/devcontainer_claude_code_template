@@ -29,7 +29,7 @@ RUN apt-get update \
     # install npm for claude-code
     npm \
     # install dev tools
-    vim \
+    vim gh \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
