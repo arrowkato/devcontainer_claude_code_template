@@ -37,7 +37,7 @@ RUN apt-get update \
 RUN curl -fsSL https://get.docker.com | sh
 
 # Copy Docker startup script
-COPY start-docker.sh /usr/local/bin/start-docker.sh
+COPY docker/start-docker.sh /usr/local/bin/start-docker.sh
 RUN chmod +x /usr/local/bin/start-docker.sh
 
 # Docker daemonを自動起動するためのentrypoint設定

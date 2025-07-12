@@ -1,19 +1,19 @@
 services:
   app:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: docker/Dockerfile
       target: develop
     # Docker-in-Docker を有効にするために privileged モードを使用
     privileged: true
     env_file:
       # Claude Code を Bedrock 経由で使うときに設定してください。
-      - .aws.env
+      - ../.aws.env
       # その他諸々の環境変数
-      - .env
+      - ../.env
     volumes:
       - type: bind
-        source: .
+        source: ..
         target: /app
       # devcontainer を使っているとgitの設定を求められることがあるので渡しておく
       - ~/.gitconfig:/root/.gitconfig:ro

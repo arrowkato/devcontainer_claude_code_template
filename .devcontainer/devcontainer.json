@@ -1,7 +1,7 @@
 {
     "dockerComposeFile": [
         // このファイルから見たときの相対パス
-        "../compose.yaml"
+        "../docker/compose.yaml"
     ],
     "service": "app",
     "workspaceFolder": "/app",
@@ -51,8 +51,9 @@
     // compose.yaml で指定された command を上書きする
     "overrideCommand": true,
     // Dev Container 起動時に実行するスクリプト1 (そのままだとシェルが使えないことに注意)
+    // compose.yaml の app サービスの entrypoint と合わせる
     "onCreateCommand": [
-        "sh",
+        "zsh",
         "-c",
         "/usr/local/bin/start-docker.sh"
     ],

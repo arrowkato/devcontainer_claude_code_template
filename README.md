@@ -113,7 +113,7 @@ Windowsの場合 Ctrl+Shift+P を押して、コマンドパレットを開き�
 
 **`docker compose`での起動**  
 ```bash
-docker compose up -d --build
+docker compose -f docker/compose.yaml up -d --build
 ```
 
 
