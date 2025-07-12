@@ -1,10 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "mcp__o3__o3-search",
       "Bash(find:*)",
       "Bash(ls:*)",
-      "WebFetch(domain:docs.anthropic.com)"
+      "WebFetch(domain:docs.anthropic.com)",
+      "mcp__o3-search__o3-search"
     ],
     "deny": [
       "Bash(rm -rf /)",
@@ -34,7 +34,7 @@
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
-    "o3",
+    "o3-search",
     "github",
     "context7"
   ]

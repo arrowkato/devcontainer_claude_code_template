@@ -1,6 +1,6 @@
 {
     "mcpServers": {
-        "o3": {
+        "o3-search": {
             "command": "npx",
             "args": [
                 "o3-search-mcp"
