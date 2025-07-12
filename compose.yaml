@@ -4,6 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
       target: develop
+    # Docker-in-Docker を有効にするために privileged モードを使用
+    privileged: true
     env_file:
       # Claude Code を Bedrock 経由で使うときに設定してください。
       - .aws.env

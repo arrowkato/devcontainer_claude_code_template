@@ -29,9 +29,19 @@ RUN apt-get update \
     # install npm for claude-code
     npm \
     # install dev tools
-    vim gh \
+    vim \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Install Docker using the docker official script
+RUN curl -fsSL https://get.docker.com | sh
+
+# Copy Docker startup script
+COPY start-docker.sh /usr/local/bin/start-docker.sh
+RUN chmod +x /usr/local/bin/start-docker.sh
+
+# Docker daemonを自動起動するためのentrypoint設定
+ENTRYPOINT ["/usr/local/bin/start-docker.sh"]
 
 # hadolint ignore=DL3016
 RUN npm install -g @anthropic-ai/claude-code
