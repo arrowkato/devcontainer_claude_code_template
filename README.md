@@ -117,7 +117,19 @@ docker compose up -d --build
 - uv パッケージマネージャー使用
 - Claude Code CLI プリインストール
 - AWS CLI v2 プリインストール
+- gh コマンド プリインストール
 - 開発用ツール（vim等）含む
+
+### Claude Code の /f コマンドについて
+
+この環境では Claude Code の `/f` コマンドが設定済みです。このコマンドは `.claude/private/CLAUDE_CODE_INSTRUCTION.md` ファイルの内容を読み込んで、Claude に指示を与えるためのコマンドです。`f` にしたのは、ホームポジションから指を動かさずに入力できるキーだからです。
+
+使用例：
+```
+/f
+```
+
+このコマンドを実行すると、プライベートな指示ファイル（`.claude/private/CLAUDE_CODE_INSTRUCTION.md`）の内容を Claude が読み込み、そこに記載された指示に従って作業を行います。機密性の高い指示や、繰り返し使用する指示を事前に設定しておくことで、効率的な開発作業が可能です。
 
 ### 注意事項
 
