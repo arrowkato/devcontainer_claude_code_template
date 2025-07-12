@@ -13,7 +13,7 @@
             "installOhMyZsh": true,
             "upgradePackages": true
         },
-        "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+        "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
             "plugins": "ssh-agent npm zsh-syntax-highlighting zsh-autosuggestions",
             "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions https://github.com/zsh-users/zsh-syntax-highlighting",
             "username": "root"
