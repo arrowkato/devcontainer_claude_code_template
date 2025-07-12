@@ -44,7 +44,9 @@
                 "GitHub.copilot-chat",
                 "ms-python.debugpy",
                 "charliermarsh.ruff",
-                "astral-sh.ty"
+                "astral-sh.ty",
+                "Anthropic.claude-code",
+                "nhoizey.gremlins"
             ]
         }
     },
