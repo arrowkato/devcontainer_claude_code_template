@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__o3__o3-search",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:docs.anthropic.com)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(rm -rf /*)",
+      "Bash(dd:*)",
+      "Bash(mkfs:*)",
+      "Bash(fdisk:*)",
+      "Bash(sudo -i:*)",
+      "Bash(sudo su:*)",
+      "Bash(sudo chmod:*)",
+      "Bash(sudo chmod 000 *)",
+      "Bash(sudo -R chmod 000 *)",
+      "Bash(sudo chown:*)",
+      "Bash(curl * | sh)",
+      "Bash(curl * | bash)",
+      "Bash(curl * | zsh)",
+      "Bash(wget * | sh)",
+      "Bash(wget * | bash)",
+      "Bash(wget * | zsh)",
+      "Bash(*passwd*)",
+      "Bash(git push -f *)",
+      "Write(.git/**)",
+      "Write(/etc/shadow)",
+      "Write(/dev/*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "o3",
+    "github",
+    "context7"
+  ]
+}
