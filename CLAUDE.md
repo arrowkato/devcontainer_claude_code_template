@@ -107,13 +107,22 @@ docker compose exec app bash
 
 ## MCP Server Configuration
 
-The template includes o3-search-mcp server configuration. To add additional MCP servers:
+The template includes o3-search-mcp server configuration and context7 MCP server. To add additional MCP servers:
 
 1. Update `.mcp.json` with new server configuration
 2. Add required environment variables to `.env` file
 3. Rebuild container to pick up changes
 
 Environment variables are automatically available to MCP servers without explicit configuration in `.mcp.json`.
+
+### Context7 Documentation Management
+
+Context7 MCP server provides access to up-to-date library documentation. Retrieved documentation is saved locally for reference:
+
+- **Storage Location**: `.claude/private/context7/`
+- **Usage**: Documentation retrieved via context7 is automatically saved as Markdown files
+- **Purpose**: Enables offline access to library documentation and maintains a knowledge base of retrieved information
+- **Best Practice**: Refer to saved documentation when working with libraries to ensure consistency and reduce API calls
 
 ## Code Quality and Pre-commit Hooks
 
