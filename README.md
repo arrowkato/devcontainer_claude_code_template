@@ -66,7 +66,7 @@ AWS_REGION=<your-region>
 #### 3. 環境変数の設定
 
 AWSやClaude以外の環境変数を設定するために、`.env` ファイルを使用します。
-このリポジトリでは、o3 search MCP サーバーを使用するための `OpenAI_API_KEY` を設定しています。
+このリポジトリでは、o3 search MCP サーバーを使用するための `OPENAI_API_KEY` と、gh コマンド用の `GITHUB_TOKEN` を設定しています。
 
 `.env` ファイルを作成し、以下の環境変数を設定してください：
 
@@ -79,6 +79,9 @@ cp .env.example .env
 ```ini
 # OpenAI API Key
 OPENAI_API_KEY="your-openai-api-key-here"
+
+# GitHub Token (gh コマンド用)
+GITHUB_TOKEN="your-github-token-here"
 ```
 
 `.env` ファイルもcompose.yamlで指定して、コンテナに情報を渡しています。
