@@ -1,0 +1,81 @@
+// 注意
+// .claude/settings.json は json形式が正しいです。
+// この行のようなコメントや各コマンドの説明コメントがあると正常に読み込めないことがあります。
+// 必要に応じて、コメントを削除してから、 .claude/settings.json にコピペして使ってください。
+// ref: https://docs.anthropic.com/ja/docs/claude-code/settings
+{
+    "permissions": {
+        "deny": [
+            // 1. コンテナ内でClaude Codeするとしても禁止することを推奨
+            "Bash(rm -rf /)", // ルートを再帰削除
+            "Bash(rm -rf ~)", // ホームディレクトリを再帰削除
+            "Bash(rm -rf /*)", // ルート配下を再帰削除
+            "Bash(dd:*)", // ディスク全域を上書き
+            "Bash(mkfs:*)", // ディスクをフォーマット
+            "Bash(fdisk:*)", // パーティション操作
+            "Bash(sudo -i:*)", // ルートシェル取得
+            "Bash(sudo su:*)", // ルートシェル取得
+            "Bash(sudo chmod:*)", // ファイル権限の強制変更
+            "Bash(sudo chmod 000 *)", // ファイル権限の強制変更
+            "Bash(sudo -R chmod 000 *)", // ファイル権限の強制変更
+            "Bash(sudo chown:*)", // ファイル所有者変更
+            "Bash(curl * | sh)", // 外部スクリプト即実行
+            "Bash(curl * | bash)", // 外部スクリプト即実行
+            "Bash(curl * | zsh)", // 外部スクリプト即実行
+            "Bash(wget * | sh)", // 外部スクリプト即実行
+            "Bash(wget * | bash)", // 外部スクリプト即実行
+            "Bash(wget * | zsh)", // 外部スクリプト即実行
+            "Bash(*passwd*)", // パスワード変更操作
+            "Bash(git push -f *)", // Git 履歴強制プッシュ
+            "Write(.git/**)", // Git 内部ファイル改変
+            "Write(/etc/shadow)", // 認証ファイル書き換え
+            "Write(/dev/*)", // デバイスファイル書き込み
+            // 2. host(e.g, OSX)上でClaude Codeを使うときは禁止することを推奨
+            "Bash(su:*)", // ユーザー切り替え
+            "Bash(sudo*)", // 広範な sudo 使用
+            "Bash(curl:*)", // 任意 URL 取得
+            "Bash(wget:*)", // 任意 URL 取得
+            "Edit(/etc/**)", // システム設定編集
+            "Write(/etc/**)", // システム設定編集
+            "Bash(* publish:*)", // パッケージ公開操作
+            "Write(~/.ssh/*)", // SSH 鍵・設定改変
+            "Bash(docker system prune -af)", // Docker 全リソース削除
+            "Bash(modprobe:*)", // カーネルモジュール操作
+            "Bash(insmod:*)", // カーネルモジュール挿入
+            "Bash(nc:*)", // ネットワーク接続ツール
+            "Bash(ncat:*)", // ネットワーク接続ツール
+            "Bash(socat:*)", // ソケット接続ツール
+            "Bash(apt:*)", // Debian パッケージ管理
+            "Bash(yum:*)", // RedHat パッケージ管理
+            "Bash(brew:*)", // macOS パッケージ管理
+            "Bash(ssh-keygen:*)", // SSH 鍵生成
+            "Bash(crontab:*)", // 定期実行設定
+            "Write(~/.bashrc)", // Bash 設定ファイル編集
+            "Write(~/.zshrc)", // Zsh 設定ファイル編集
+            "Write(~/.profile)", // シェル設定ファイル編集
+            "Write(~/.bash_profile)", // Bash プロファイル編集
+            "Write(~/.zsh_profile)", // zsh プロファイル編集
+            // 3. 任意で設定してください。
+            "Bash(apt-get install:*)", // OS パッケージ追加
+            "Bash(pip install:*)", // Python パッケージ追加
+            "Bash(reboot)", // システム再起動
+            "Bash(shutdown)", // システム停止
+            "Bash(mkdir /*)", // ルート直下にディレクトリ作成
+            "Bash(rm -rf*)", // すべての rm -rf
+            "Bash(cp /* *)", // ルート直下からコピー
+            "Bash(mv /* *)", // ルート直下から移動
+            "WebFetch", // Web コンテンツ取得
+            "Bash(kill)", // プロセス終了
+            "Bash(pkill)", // プロセス名で終了
+            "Bash(killall)", // 全プロセス終了
+            "Bash(systemctl)", // システムサービス制御
+            "Bash(service)", // サービス制御
+            "Bash(uname)", // システム情報表示
+            "Bash(ifconfig)", // ネットワーク設定
+            "Bash(ps)", // プロセス一覧
+            "Bash(whoami)", // 現在ユーザー表示
+            "Bash(useradd)", // ユーザー追加
+            "Bash(usermod)" // ユーザー変更
+        ]
+    }
+}
