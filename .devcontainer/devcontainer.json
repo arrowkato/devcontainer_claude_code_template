@@ -20,8 +20,6 @@
         },
         "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
     },
-    // compose.yaml で指定された command を上書きする
-    "overrideCommand": true,
     "customizations": {
         "extensions": [
             "ms-python.python"
@@ -50,8 +48,14 @@
             ]
         }
     },
+    // compose.yaml で指定された command を上書きする
+    "overrideCommand": true,
     // Dev Container 起動時に実行するスクリプト1 (そのままだとシェルが使えないことに注意)
-    "onCreateCommand": "echo hoge",
+    "onCreateCommand": [
+        "sh",
+        "-c",
+        "/usr/local/bin/start-docker.sh"
+    ],
     // Dev Container 起動時に実行するスクリプト2 (そのままだとシェルが使えないことに注意)
     "updateContentCommand": [
         "sh",
