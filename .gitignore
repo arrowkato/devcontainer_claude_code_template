@@ -234,3 +234,5 @@ data/**
 # CLAUDE_CODE_INSTRUCTION.md には秘匿したい情報を書くため無視
 .claude/private/
 
+# 本来はgit管理対象外のハズなのだが、VSCodeのGitからは見えるので、明示的に無視する
+.claude/settings.local.json
