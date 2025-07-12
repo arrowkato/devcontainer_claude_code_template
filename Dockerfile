@@ -23,10 +23,13 @@ RUN apt-get update \
 
 FROM uv_base AS develop
 
-# install npm for claude-code
 # hadolint ignore=DL3008
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends npm vim \
+    && apt-get install -y --no-install-recommends \
+    # install npm for claude-code
+    npm \
+    # install dev tools
+    vim gh \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
