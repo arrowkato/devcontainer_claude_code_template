@@ -4,7 +4,6 @@ services:
       context: .
       dockerfile: Dockerfile
       target: develop
-    container_name: news_curator_agent
     env_file:
       # Claude Code を Bedrock 経由で使うときに設定してください。
       - .aws.env
