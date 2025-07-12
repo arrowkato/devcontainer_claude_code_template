@@ -69,6 +69,12 @@ uv run python <script.py>
 # Code formatting and linting
 ruff check .
 ruff format .
+
+# Run linting with auto-fix
+ruff check . --fix
+
+# Check specific files
+ruff check path/to/file.py
 ```
 
 ### Claude Code Usage
@@ -108,3 +114,20 @@ The template includes o3-search-mcp server configuration. To add additional MCP 
 3. Rebuild container to pick up changes
 
 Environment variables are automatically available to MCP servers without explicit configuration in `.mcp.json`.
+
+## Code Quality and Pre-commit Hooks
+
+The project includes pre-commit hooks for consistent code quality:
+
+```bash
+# Install pre-commit hooks (done automatically in DevContainer)
+pre-commit install
+
+# Run pre-commit hooks on all files
+pre-commit run --all-files
+
+# Run pre-commit hooks on staged files
+pre-commit run
+```
+
+Ruff configuration in `ruff.toml` provides comprehensive linting with Python 3.13 compatibility and Black-style formatting.
