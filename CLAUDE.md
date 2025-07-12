@@ -33,7 +33,7 @@ cp .aws.env.sample .aws.env
 2. **`.env`** - API keys for MCP servers:
 ```bash
 cp .env.sample .env  
-# Edit with actual API keys (e.g., OPENAI_API_KEY)
+# Edit with actual API keys (e.g., OPENAI_API_KEY, GITHUB_PERSONAL_ACCESS_TOKEN)
 ```
 
 ## Architecture
