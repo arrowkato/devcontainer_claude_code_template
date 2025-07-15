@@ -15,6 +15,11 @@ services:
       - type: bind
         source: ..
         target: /app
+      # AWSのmcpサーバー接続のために接続情報を渡すための設定。
+      # あらかじめ ../private 配下に coinfg と credentials を配置してください
+      - type: bind
+        source: ../private/.aws
+        target: /root/.aws/
       # devcontainer を使っているとgitの設定を求められることがあるので渡しておく
       - ~/.gitconfig:/root/.gitconfig:ro
     tty: true
