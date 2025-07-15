@@ -235,3 +235,5 @@ multipage.spec
 .claude/private/
 .claude/settings.local.json
 
+# 秘匿情報
+private/

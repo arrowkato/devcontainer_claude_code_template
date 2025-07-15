@@ -236,3 +236,6 @@ data/**
 
 # 本来はgit管理対象外のハズなのだが、VSCodeのGitからは見えるので、明示的に無視する
 .claude/settings.local.json
+
+# 秘匿情報を入れておくディレクトリ
+private/
