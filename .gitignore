@@ -232,10 +232,16 @@ data/**
 
 # Claude Code で /f コマンドを打つと、.claude/private/CLAUDE_CODE_INSTRUCTION.md の内容を実行する
 # CLAUDE_CODE_INSTRUCTION.md には秘匿したい情報を書くため無視
-.claude/private/
+.claude/private/*
 
 # 本来はgit管理対象外のハズなのだが、VSCodeのGitからは見えるので、明示的に無視する
 .claude/settings.local.json
 
-# 秘匿情報を入れておくディレクトリ
-private/
+# 秘匿情報を入れておくディレクトリ。基本的に全部無視。sampleファイルだけ登録
+private/**
+private/*/**
+!private/.aws/
+!private/.aws/config.sample
+!private/.aws/credentials.sample
+
+
